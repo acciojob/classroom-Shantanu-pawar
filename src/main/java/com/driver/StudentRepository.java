@@ -45,6 +45,7 @@ public class StudentRepository {
         }
         return list;
     }
+
     public void deleteTeacherByName(String teacher){
         List<String> student_list = student_teacherdb.get(teacher);
         for(String s : student_list){
@@ -53,6 +54,7 @@ public class StudentRepository {
         teacherdb.remove(teacher);
         student_teacherdb.remove(teacher);
     }
+
     public void deleteAllTeachers() {
         for (List<String> student_list : student_teacherdb.values()) {
             for (String s : student_list) {
