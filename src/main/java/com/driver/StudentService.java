@@ -7,42 +7,34 @@ import java.util.List;
 
 @Service
 public class StudentService {
-
     @Autowired
-    StudentRepository studentRepository;
+    StudentRepository repository;
 
     public void addStudent(Student student){
-        studentRepository.addStudent(student);
+        repository.addStudent(student);
     }
-
     public void addTeacher(Teacher teacher){
-        studentRepository.addTeacher(teacher);
+        repository.addTeacher(teacher);
     }
-
-    public void addStudentTeacherPair(String student, String teacher){
-        studentRepository.addStudentTeacherPair(student, teacher);
+    public void addStudentTeacherPair(String student , String teacher){
+        repository.addStudentTeacherPair(student,teacher);
     }
-
     public Student getStudentByName(String name){
-        return studentRepository.getStudentByName(name);
+        return repository.getStudentByName(name);
     }
     public Teacher getTeacherByName(String name){
-        return studentRepository.getTeacherByName(name);
+        return repository.getTeacherByName(name);
     }
-
     public List<String> getStudentByTeacherName(String teacher){
-        return studentRepository.getStudentByTeacherName(teacher);
+        return repository.getStudentByTeacherName(teacher);
     }
-
-    public List<String> getAllStudent(){
-        return studentRepository.getAllStudent();
+    public List<String> getAllStudents(){
+        return repository.getAllStudent();
     }
-
     public void deleteTeacherByName(String teacher){
-        studentRepository.deleteTeacherByName(teacher);
+        repository.deleteTeacherByName(teacher);
     }
-
     public void deleteAllTeachers(){
-        studentRepository.deleteAllTeachers();
+        repository.deleteAllTeachers();
     }
 }
