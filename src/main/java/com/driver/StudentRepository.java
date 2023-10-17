@@ -15,8 +15,7 @@ public class StudentRepository {
     HashMap<String , List<String>> studentTeacherDB = new HashMap<>();
 
     public void addStudent(Student student){
-        String studentName = student.getName();
-        studentDB.put(studentName, student);
+        studentDB.put(student.getName(), student);
     }
 
     public void addTeacher(Teacher teacher){
@@ -52,7 +51,7 @@ public class StudentRepository {
 
     public List<String> getAllStudent(){
         List<String> studentList = new ArrayList<>();
-        for(String sName : studentTeacherDB.keySet()){
+        for(String sName : studentDB.keySet()){
             studentList.add(sName);
         }
         return studentList;
@@ -71,7 +70,7 @@ public class StudentRepository {
         for(List<String> studentList : studentTeacherDB.values()){
 
             for(String s : studentList){
-                studentList.remove(s);
+                studentDB.remove(s);
             }
 
             teacherDB.clear();
